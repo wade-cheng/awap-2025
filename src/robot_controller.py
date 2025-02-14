@@ -1319,9 +1319,3 @@ class RobotController:
         for unit in self.__game_state.units[self.__team].values():
             if unit.type == UnitType.RAT:
                 self.harm_farm(unit.id)
-
-
-    '''
-    TODO: possibly provide players with A* algorithm ie
-    def move_unit_to_location(self, unit_id, x, y)
-    '''
