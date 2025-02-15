@@ -28,9 +28,9 @@ Equivalently, running the above command without the render flag does not render 
 <br>
 
 
-#### Run this for an ascii-based vizualization in the terminal:
+#### Run this for an ascii-based vizualization in the terminal after running a previous command:
 
-`python3 replay_game_cli.py game_replay.awap25r`
+`python3 replay_game_cli.py replays/game_replay.awap25r`
 <br>
 <br>
 
