@@ -13,8 +13,6 @@ from src.units import Unit
 class Renderer:
     '''Contains helper functions that draws in pygame what is required'''
 
-    
-
     def __init__(self, map: Map):
 
         self.map = map
@@ -25,7 +23,7 @@ class Renderer:
 
     def get_screen_coords(self, x: int, y: int) -> tuple[tuple[int, int], tuple[int, int]]:
         '''
-        Function to get screen coordinates of each map tile in the form ((left, top), (width, height))
+        Helper unction to get screen coordinates of each map tile in the form ((left, top), (width, height))
         '''
 
         left = x * MapRender.TILE_SIZE
@@ -34,13 +32,17 @@ class Renderer:
 
 
     def init_render(self):
+        '''Initializes the pygame window'''
         pygame.init()
         pygame.display.set_caption("Game State Visualizer")
-        self.screen = pygame.display.set_mode((self.width * MapRender.TILE_SIZE, self.height * MapRender.TILE_SIZE))
-
+        self.screen = pygame.display.set_mode((self.width * MapRender.TILE_SIZE, self.height * MapRender.TILE_SIZE + 50)) #+50 for the text at the bottom
 
     def map_render(self):
         '''Renders the map background'''
+
+        #all of the background is white
+        self.screen.fill((255, 255, 255))
+
         #draw tiles and map
         for x in range(self.width):
             for y in range(self.height):

@@ -223,6 +223,9 @@ class TileColors:
         Tile.ERROR : (0, 0, 0), #white
         Tile.MOUNTAIN : (128, 128, 128), #gray
         Tile.GRASS : (0, 128, 0), #green
+        Tile.SAND : (3, 2), #yellow
+        Tile.WATER : (173, 216, 230), #light blue
+        Tile.BRIDGE : (222, 184, 135), #brown
     }
 
 
@@ -231,9 +234,11 @@ class BuildingRender:
     
     text = {
         BuildingType.MAIN_CASTLE : 'M',
-        BuildingType.FARM_1: 'F',
         BuildingType.PORT: 'P',
         BuildingType.EXPLORER_BUILDING: 'E',
+        BuildingType.FARM_1 : 'F',
+        BuildingType.FARM_2 : 'F',
+        BuildingType.FARM_3 : 'F',
     }
 
     BUILDING_COLOR = {
@@ -248,9 +253,19 @@ class UnitRender:
         UnitType.ENGINEER: 'N',
         UnitType.EXPLORER: 'X',
         UnitType.LAND_HEALER_1: 'H',
+        UnitType.LAND_HEALER_2: 'H',
+        UnitType.LAND_HEALER_3: 'H',
         UnitType.SAILOR: 'S',
         UnitType.GALLEY: 'G',
-        UnitType.WATER_HEALER_1: 'H'
+        UnitType.WATER_HEALER_1: 'H',
+        UnitType.WATER_HEALER_2: 'H',
+        UnitType.WATER_HEALER_3: 'H',
+        UnitType.WARRIOR: 'W',
+        UnitType.SWORDSMAN: 'M',
+        UnitType.DEFENDER: 'D',
+        UnitType.CATAPULT: 'C',
+        UnitType.RAIDER: 'R',
+        UnitType.CAPTAIN: 'P',
     }
 
     UNIT_COLOR = {

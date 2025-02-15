@@ -1,7 +1,7 @@
 ''' file that has the game state at a given instnace; can change the game state through functions (attack function, spawn function) '''
 
 from src.map import Map
-from src.game_constants import Team, GameConstants, UnitType, BuildingType
+from src.game_constants import Team, GameConstants, UnitType, BuildingType, MapRender
 from src.buildings import Building
 from src.units import Unit
 
@@ -12,6 +12,7 @@ from src.renderer import Renderer
 import os
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide" #stop the command line pygame printout
 import pygame
+import pygame.font as font
 
 from typing import Dict, Optional
 
@@ -454,6 +455,15 @@ class GameState:
         #render blue units
         for unit in self.units[Team.BLUE].values():
             self.renderer.unit_render(unit)
+
+        #render game_state (turn, balance, etc.)
+        BLACK = (0, 0, 0)
+        turn_text = font.SysFont('Comic Sans MS', 10).render(f'Turn: {self.turn}', True, BLACK)
+        blue_balance_text = font.SysFont('Comic Sans MS', 10).render(f'Blue balance: {self.balance[Team.BLUE]}', True, BLACK)
+        red_balance_text = font.SysFont('Comic Sans MS', 10).render(f'Red balance: {self.balance[Team.RED]}', True, BLACK)
+        self.renderer.screen.blit(turn_text, ((5, self.renderer.height * MapRender.TILE_SIZE + 5), (20, 10)))
+        self.renderer.screen.blit(blue_balance_text, ((5, self.renderer.height * MapRender.TILE_SIZE + 20), (20, 10)))
+        self.renderer.screen.blit(red_balance_text, ((5, self.renderer.height * MapRender.TILE_SIZE + 35), (20, 10)))
 
         pygame.display.update()
 
