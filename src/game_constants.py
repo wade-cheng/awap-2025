@@ -23,7 +23,6 @@ class GameConstants:
 
     STARTING_BALANCE = 10  # Starting coins per team
     PASSIVE_COINS_PER_TURN = 1  # Number of coins gained per turn
-    FARM_COINS_PER_TURN = 1
 
     INITIAL_TIME_POOL = 10
     ADDITIONAL_TIME_PER_TURN = 0.01
@@ -98,7 +97,7 @@ Object Class Starting Stats and Constants
 
 class BuildingType (Enum):
 
-    def __init__(self, health: int, cost: int, attack_range: int, damage_range:int, cooldown: int, damage: int, defense: int, actions_per_turn: int,spawnable: bool, placeable_tiles: Optional[List[Tile]]):
+    def __init__(self, health: int, cost: int, attack_range: int, damage_range:int, cooldown: int, damage: int, defense: int, actions_per_turn: int, coins_per_turn: int, spawnable: bool, placeable_tiles: Optional[List[Tile]]):
         self.health = health
         self.cost = cost
         self.attack_range = attack_range
@@ -110,6 +109,8 @@ class BuildingType (Enum):
 
         self.actions_per_turn = actions_per_turn
 
+        self.coins_per_turn = coins_per_turn
+
         self.spawnable = spawnable # Can spawn units if True
 
         if placeable_tiles is None: #typical land building
@@ -118,15 +119,15 @@ class BuildingType (Enum):
             self.placeable_tiles = placeable_tiles #tiles that it can be placed on
 
 
-    #in the order of (health, cost, attack_range, damage_range, cooldown, damage, defense, actions_per_turn, spawnable, placeable_tiles)
+    #in the order of (health, cost, attack_range, damage_range, cooldown, damage, defense, actions_per_turn, coins_per_turn, spawnable, placeable_tiles)
 
-    MAIN_CASTLE = (30, -1, 0, 1, 0, 0, 0, 1, True, None)
-    PORT = (20, 25, 0, 1, 0, 0, 0, 1, True, [Tile.WATER, Tile.BRIDGE])
-    EXPLORER_BUILDING = (20, 100, 0, 0, 1, 0, 0, 0, False, None)
+    MAIN_CASTLE = (30, -1, 0, 1, 0, 0, 0, 1, 0, True, None)
+    PORT = (20, 25, 0, 1, 0, 0, 0, 1, 0, True, [Tile.WATER, Tile.BRIDGE])
+    EXPLORER_BUILDING = (20, 100, 0, 0, 1, 0, 0, 0, 0, False, None)
 
-    FARM_1 = (10, 30, 0, 1, 0, 0, 0, 1, True, None)
-    FARM_2 = (15, 60, 0, 1, 0, 0, 0, 1, True, None)
-    FARM_3 = (20, 90, 0, 1, 0, 0, 0, 1, True, None)
+    FARM_1 = (10, 30, 0, 1, 0, 0, 0, 1, 1, True, None)
+    FARM_2 = (15, 60, 0, 1, 0, 0, 0, 1, 2, True, None)
+    FARM_3 = (20, 90, 0, 1, 0, 0, 0, 1, 3, True, None)
 
 
 

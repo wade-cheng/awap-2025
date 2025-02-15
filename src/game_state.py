@@ -420,7 +420,7 @@ class GameState:
         for team in [Team.RED, Team.BLUE]:
             for building in self.buildings[team].values():
                 if building.type in self.FARMS:
-                    self.balance[team] += GameConstants.FARM_COINS_PER_TURN
+                    self.balance[team] += building.type.coins_per_turn
 
 
 
