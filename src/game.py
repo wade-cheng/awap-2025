@@ -81,6 +81,10 @@ class Game:
         replay_data = {
             "ID": str(uuid.uuid4()),
             "map": self.map,
+            "map-changes": {
+                "changed-turns": self.game_state.changed_turns,
+                "changed-maps": self.game_state.changed_maps
+            },
             "winner_color": self.replay[0].get("winner_color", "None"),
             "replay": self.replay
         }

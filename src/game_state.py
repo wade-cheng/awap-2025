@@ -74,6 +74,9 @@ class GameState:
         
         self.previousBuildingsBlue = None 
 
+        self.changed_turns = [] # turn numbers where map was changed
+        self.changed_maps = [] # changed map on that turn, list of 2D maps
+
     
     '''
     -----------------------
