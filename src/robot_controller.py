@@ -308,7 +308,7 @@ class RobotController:
             print('can_build_building(): (x, y) given are out of bounds')
             return False
 
-        #checks if building can spawn unit_type
+        #checks if building can be built
         if building_type.placeable_tiles is not None and self.__game_state.map.tiles[x][y] not in building_type.placeable_tiles:
             return False
 

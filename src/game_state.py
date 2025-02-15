@@ -39,9 +39,6 @@ class GameState:
         self.has_rendered = False #if the pygame has been initialized
         self.tile_size = -1
 
-        self.building_placeable_map = [[True for y in range(self.map.height)] for x in range(self.map.width)]
-        self.unit_placeable_map = [[True for y in range(self.map.height)] for x in range(self.map.width)]
-
         self.buildings: Dict[Team, Dict[int, Building]] = {Team.BLUE: {}, Team.RED: {}}
         self.units: Dict[Team, Dict[int, Unit]] = {Team.BLUE: {}, Team.RED: {}}
 
@@ -49,6 +46,13 @@ class GameState:
         red_main_castle = Building(Team.RED, BuildingType.MAIN_CASTLE, self.map.red_castle_loc[0], self.map.red_castle_loc[1], spawnable= True)
         blue_main_castle = Building(Team.BLUE, BuildingType.MAIN_CASTLE, self.map.blue_castle_loc[0], self.map.blue_castle_loc[1], spawnable= True)
         #this is to know when we deleted the building (ie when the game ends)
+
+        self.building_placeable_map = [[True for y in range(self.map.height)] for x in range(self.map.width)]
+        self.unit_placeable_map = [[True for y in range(self.map.height)] for x in range(self.map.width)]
+        #set building_placeable
+        self.building_placeable_map[self.map.red_castle_loc[0], self.map.red_castle_loc[1]] = False
+        self.building_placeable_map[self.map.blue_castle_loc[0], self.map.blue_castle_loc[1]] = False
+
 
         self.main_castle_ids: Dict[Team, int] = {Team.RED: red_main_castle.id, Team.BLUE: blue_main_castle.id}
 
