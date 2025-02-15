@@ -1172,6 +1172,10 @@ class RobotController:
         # Change the tile to BRIDGE
         self.__game_state.map.tiles[engineer.x][engineer.y] = Tile.BRIDGE
 
+        # Record the map change
+        self.__game_state.changed_maps.append(self.__game_state.map.to_2d_list())
+        self.__game_state.changed_turns.append(self.__game_state.turn)
+
         # Disband the engineer
         if not self.disband_unit(engineer_id):
             print("build_bridge(): Failed to disband engineer")

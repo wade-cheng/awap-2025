@@ -87,3 +87,9 @@ class Map:
             # "blue_castle_loc": self.blue_castle_loc,
             # "red_castle_loc": self.red_castle_loc
         }
+    
+    def to_2d_list(self):
+        """
+        Converts the map into a 2D list of tile names.
+        """
+        return [[tile.name if hasattr(tile, 'name') else str(tile) for tile in row] for row in self.tiles]
