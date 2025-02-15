@@ -121,12 +121,12 @@ class BuildingType (Enum):
     #in the order of (health, cost, attack_range, damage_range, cooldown, damage, defense, actions_per_turn, spawnable, placeable_tiles)
 
     MAIN_CASTLE = (30, -1, 0, 1, 0, 0, 0, 1, True, None)
-    PORT = (20, 10, 0, 1, 0, 0, 0, 1, True, [Tile.WATER, Tile.BRIDGE])
-    EXPLORER_BUILDING = (20, 30, 0, 0, 1, 0, 0, 0, False, None)
+    PORT = (20, 25, 0, 1, 0, 0, 0, 1, True, [Tile.WATER, Tile.BRIDGE])
+    EXPLORER_BUILDING = (20, 100, 0, 0, 1, 0, 0, 0, False, None)
 
-    FARM_1 = (10, 3, 0, 1, 0, 0, 0, 1, True, None)
-    FARM_2 = (15, 5, 0, 1, 0, 0, 0, 1, True, None)
-    FARM_3 = (20, 7, 0, 1, 0, 0, 0, 1, True, None)
+    FARM_1 = (10, 30, 0, 1, 0, 0, 0, 1, True, None)
+    FARM_2 = (15, 60, 0, 1, 0, 0, 0, 1, True, None)
+    FARM_3 = (20, 90, 0, 1, 0, 0, 0, 1, True, None)
 
 
 
