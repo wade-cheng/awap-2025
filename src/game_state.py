@@ -50,8 +50,8 @@ class GameState:
         self.building_placeable_map = [[True for y in range(self.map.height)] for x in range(self.map.width)]
         self.unit_placeable_map = [[True for y in range(self.map.height)] for x in range(self.map.width)]
         #set building_placeable
-        self.building_placeable_map[self.map.red_castle_loc[0], self.map.red_castle_loc[1]] = False
-        self.building_placeable_map[self.map.blue_castle_loc[0], self.map.blue_castle_loc[1]] = False
+        self.building_placeable_map[self.map.red_castle_loc[0]][self.map.red_castle_loc[1]] = False
+        self.building_placeable_map[self.map.blue_castle_loc[0]][self.map.blue_castle_loc[1]] = False
 
 
         self.main_castle_ids: Dict[Team, int] = {Team.RED: red_main_castle.id, Team.BLUE: blue_main_castle.id}
