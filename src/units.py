@@ -3,7 +3,10 @@
 from src.game_constants import GameConstants, UnitType, Team, UnitRender
 
 class Unit:
-    #TODO: add docstrings
+    '''
+    This is an extensible unit class with all the traits of a building.
+    The specifications for a building/unit is given in src/game_constants.py
+    '''
 
     #ID for participants to interface through instead of through the actual object for safety
     id_counter = 0

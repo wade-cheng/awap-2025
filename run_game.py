@@ -57,7 +57,6 @@ def main():
         blue_path = args.blue_path
         red_path = args.red_path
         map_path = args.map_path
-        # map_instance = Map(blue_castle_loc= (0, 0), red_castle_loc= (49, 49)) #TODO modularize this away!!
 
     game = Game(
         blue_path=blue_path, red_path=red_path, map_path=map_path, output_path=args.output_file, render=render

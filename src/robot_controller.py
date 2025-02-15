@@ -756,7 +756,6 @@ class RobotController:
         return self.unit_attack_location(attacking_unit_id, target_unit.x, target_unit.y)
 
 
-    '''TODO make sure, just unit_attack_building is callable land don't NEED can_unit_attack_building, etc.'''
     def unit_attack_building(self, attacking_unit_id: int, target_building_id: int) -> bool:
         '''
         Unit from player's team attacks building from opponent's team.
@@ -768,7 +767,6 @@ class RobotController:
 
         Returns True if attack is successful, False otherwise
         '''
-        #TODO: THIS IS FOR AREA ATTACKS????
 
         #check attack validity
         if not self.can_unit_attack_building(attacking_unit_id, target_building_id):
@@ -796,7 +794,6 @@ class RobotController:
 
         Returns True if attack is successful, False otherwise
         '''
-        #TODO: THIS IS FOR AREA ATTACKS
         
         #check validity
         if not self.can_building_attack_location(attacking_building_id, x, y):
@@ -880,9 +877,6 @@ class RobotController:
     ---------------------------------------------------------------
     '''
 
-    '''TODO add a directions can move function that returns a list of directions that a unit can move to'''
-
-
 
     def new_location(self, x: int, y: int, direction: Direction) -> Tuple[int, int]:
         '''
@@ -962,7 +956,6 @@ class RobotController:
 
         Returns True if move is successful, False otherwise
         '''
-        #TODO: currently assume all tiles have the same movement; need to add water (obstacles), which needs A* search, and different movement cost per tile
 
         if not self.can_move_unit_in_direction(unit_id, direction):
             return False
