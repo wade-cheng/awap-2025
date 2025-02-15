@@ -123,10 +123,20 @@ class Game:
         blue_lose = self.game_state.blue_main_castle_id not in self.game_state.buildings[Team.BLUE]  # blue castle destroyed
         red_lose = self.game_state.red_main_castle_id not in self.game_state.buildings[Team.RED]  # red castle destroyed
 
+        # record last turn for replay file (health of one should be 0)
+        turn_data = {
+            "turn_number": len(self.replay), 
+            "game_state": self.game_state.to_dict(),  
+        }
+
+        self.record_turn(turn_data)
+
+
         # check if one main castle is destroyed while the other is not (definitive win)
         if blue_lose and not red_lose:
             print('RED WINS')
             self.replay[0]["winner_color"] = "RED"
+            
             return Team.RED  # Red main castle still standing
         elif red_lose and not blue_lose:
             print('BLUE WINS')
@@ -196,6 +206,7 @@ class Game:
         red_success = self.call_player_code(Team.RED)
 
         if not blue_success and not red_success:  # Both failed
+            
             return self.calculate_winner()
         if not blue_success: # Blue failed
             print('RED WINS')
