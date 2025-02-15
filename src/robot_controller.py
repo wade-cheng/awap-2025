@@ -1,9 +1,6 @@
-''' this is the code that the player has access to and can call. Note that safety is a big issue here, as the player can only access FUNCTIONS of the RC class, but they cannot access the actual __gs variable. Each function will make a deepcopy of the return variable from __gs '''
-
-''' another safety concern is that the player MUST NOT be able to access anything outside of their information, as we want to implement Fog of war '''
-
-
-''' players can query information (money, towers, known objects) as well as take actions to change game_state '''
+'''
+This file contains all the functions that a player can call in their bot
+'''
 
 import copy, math
 from typing import List, Optional, Dict, Tuple

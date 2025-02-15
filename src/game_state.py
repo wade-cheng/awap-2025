@@ -1,4 +1,4 @@
-''' file that has the game state at a given instnace; can change the game state through functions (attack function, spawn function) '''
+''' file that contains the game state at a given instnace; can change the game state through functions (attack function, spawn function) '''
 
 from src.map import Map
 from src.game_constants import Team, GameConstants, UnitType, BuildingType, MapRender

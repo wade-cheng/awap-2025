@@ -1,6 +1,4 @@
-''' makes the map '''
-
-''' hopefully we can implement some form of fog of war '''
+''' Details the map '''
 
 from src.exceptions import GameException
 
